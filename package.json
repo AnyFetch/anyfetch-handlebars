@@ -1,0 +1,37 @@
+{
+  "name": "anyfetch-handlebars",
+  "version": "1.0.0",
+  "author": "Quentin Buathier <quentin.buathier@epitech.eu>",
+  "scripts": {
+    "test": "NODE_ENV=test mocha --recursive -R spec test/ -t 5000",
+    "coverage": "LONG=1 NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive -R spec test/ -t 5000",
+    "lint": "jshint lib/ test/ && jscs lib/ test/"
+  },
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnyFetch/anyfetch-handlebars"
+  },
+  "keywords": [
+    "anyfetch",
+    "handlebars"
+  ],
+  "dependencies": {
+    "async": "0.9.x",
+    "auto-load": "1.x.x",
+    "document-highlighter": "^2.0.3",
+    "handlebars": "^2.0.0",
+    "logic-query-parser": "0.0.4",
+    "rarity": "^2.1.1"
+  },
+  "devDependencies": {
+    "mocha": "1.21.x",
+    "should": "4.1.x",
+    "jshint": "^2.5.6",
+    "jscs": "^1.7.3"
+  },
+  "licence": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
