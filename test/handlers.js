@@ -18,12 +18,14 @@ describe("Handlebars projection handlers", function() {
       metadata: {
         attr: "Hello\\\\ world\"&",
         anotherAttr: "Hello world",
-        long: "Look, I'll give you Jesse Pinkman, OK? Like you said, he's the problem, he's always been the problem and without him, we would... and he's in town, alright? He's not in Virginia or wherever the hell you're looking for him. He's right here in Albuquerque and I can take you to him, I'll take you right to him. What do you say? It's complicated and I don't wish to discuss it. It's none of your concern. You know what, let's just say that I have a hell of a lot more on my mind, right now, than thinking about buying a damn car wash. Okay? So if you could just... please. Stop. Stop! You keep saying that word - danger... danger!"
+        long: "Look, I'll give you Jesse Pinkman, OK? Like you said, he's the problem, he's always been the problem and without him, we would... and he's in town, alright? He's not in Virginia or wherever the hell you're looking for him. He's right here in Albuquerque and I can take you to him, I'll take you right to him. What do you say? It's complicated and I don't wish to discuss it. It's none of your concern. You know what, let's just say that I have a hell of a lot more on my mind, right now, than thinking about buying a damn car wash. Okay? So if you could just... please. Stop. Stop! You keep saying that word - danger... danger!",
+        someCount: 42,
       },
       data: {
         attr: "Wuh"
       },
-      theDate: new Date(0)
+      theDate: new Date(0),
+      undefinedValue: undefined
     };
 
     hbs.loadAnyfetchHelpers(this.context);
@@ -174,6 +176,24 @@ describe("Handlebars projection handlers", function() {
       hbs
         .compile("{{hideDomainEmail query}}")(this.context)
         .should.eql(this.context.query);
+    });
+  });
+
+  describe("{{safeInt integer}}", function() {
+    it('should output 0 for other than number', function() {
+      hbs
+        .compile("{{safeInt metadata}}")(this.context)
+        .should.eql('0');
+    });
+    it('should output 0 for undefined', function() {
+      hbs
+        .compile("{{safeInt undefinedValue}}")(this.context)
+        .should.eql('0');
+    });
+    it('should output', function() {
+      hbs
+        .compile("{{safeInt metadata.someCount}}")(this.context)
+        .should.eql(this.context.metadata.someCount.toString());
     });
   });
 });
