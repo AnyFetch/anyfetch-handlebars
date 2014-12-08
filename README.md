@@ -1,9 +1,10 @@
 # Anyfetch-Handlebars
 > Visit http://anyfetch.com for details about AnyFetch.
 
-Inject new helpers in handlebars
+Inject new helpers in handlebars.
 
 # How to install?
+
 ```
 npm install
 ```
@@ -35,7 +36,7 @@ var rawDocument = {
 
 hbs.loadAnyfetchHelpers(rawDocument);
 
-var json = hbs.compile("{ \
+var compiled = hbs.compile("{ \
   \"title\": \
     {{#if metadata.title}} \
       \"{{attr 'title'}}\" \
@@ -48,13 +49,15 @@ var json = hbs.compile("{ \
     {{/if~}}, \
   \"path\": \"{{attr 'path'}}\", \
   \"snippet\": \"{{#trim .}}{{shortAttr 'text'}}{{/trim}}\" \
-}")(rawDocument);
+}");
+
+var json = compiled(rawDocument);
 
 // Beautify JSON
 json = JSON.stringify(JSON.parse(json), null, 4);
 ```
 
-And now, JSON value is: 
+This results in:
 
 ```json
 {
