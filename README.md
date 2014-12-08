@@ -64,4 +64,10 @@ And now, JSON value is:
 }
 ```
 
+# Contributing to anyfetch-handlebars
+
+This repo is used extensively by AnyFetch.
+If your document-type needs a custom handlebars helper, you're welcome to fork. See [Contributing](CONTRIBUTING.md) for details.
+>>>>>>> master
+
 Support: `support@anyfetch.com`.
