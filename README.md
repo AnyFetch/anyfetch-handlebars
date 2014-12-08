@@ -18,4 +18,9 @@ var hbs = require('anyfetch-handlebars');
 hbs.loadAnyfetchHelpers(/* Your context */);
 ```
 
+# Contributing to anyfetch-handlebars
+
+This repo is used extensively by AnyFetch.
+If your document-type needs a custom handlebars helper, you're welcome to fork. See [Contributing](CONTRIBUTING.md) for details.
+
 Support: `support@anyfetch.com`.
