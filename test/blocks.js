@@ -132,4 +132,24 @@ describe("Handlebars projection blocks", function() {
         .should.eql('hi');
     });
   });
+
+  describe("{{#toBr}}", function() {
+    it('should replace \\n', function() {
+      hbs
+        .compile("{{#toBr}}test\ntest2{{/toBr}}")(this.context)
+        .should.eql('test<br>test2');
+    });
+
+    it('should replace \\r', function() {
+      hbs
+        .compile("{{#toBr}}test\rtest2{{/toBr}}")(this.context)
+        .should.eql('test<br>test2');
+    });
+
+    it('should replace \\r\\n', function() {
+      hbs
+        .compile("{{#toBr}}test\r\ntest2{{/toBr}}")(this.context)
+        .should.eql('test<br>test2');
+    });
+  });
 });
