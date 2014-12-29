@@ -56,6 +56,12 @@ describe("Handlebars projection handlers", function() {
         .compile("{{attr 'attru'}}")(this.context)
         .should.eql('');
     });
+
+    it("should output the default string as a fallback", function() {
+      hbs
+        .compile("{{attr 'attru' 'test'}}")(this.context)
+        .should.eql('test');
+    });
   });
 
   describe("{{shortAttr attrName}}", function() {
