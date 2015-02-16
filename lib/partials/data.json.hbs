@@ -1,0 +1,5 @@
+{{#if data.html}}
+  "{{htmlHighlighter data.html}}"
+{{else}}
+  "{{#toBr}}{{textHighlighter data.text}}{{/toBr}}"
+{{/if}}
