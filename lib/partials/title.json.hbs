@@ -1,0 +1,9 @@
+{{#if metadata.title}}
+  "{{attr 'title'}}"
+{{else}}
+  {{#if metadata.path}}
+    "{{extractFilename metadata.path}}"
+  {{else}}
+    "Unknown document: no path."
+  {{/if}}
+{{/if~}}

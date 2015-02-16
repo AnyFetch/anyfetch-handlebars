@@ -1,0 +1,14 @@
+{{#if highlight.name}}
+  "{{#escapeQuotes .}}{{{highlight.name}}}{{/escapeQuotes}}"
+{{else}}
+  {{#if metadata.name}}
+    "{{#escapeQuotes .}}{{metadata.name}}{{/escapeQuotes}}"
+  {{else}}
+    {{#unless metadata.email}}
+      "Anonymous"
+    {{/unless}}
+    {{#first metadata.email}}
+      "{{email}}"
+    {{/first}}
+  {{/if}}
+{{/if}}
