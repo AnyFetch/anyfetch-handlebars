@@ -96,7 +96,7 @@ describe("Handlebars projection handlers", function() {
     it('should highlight the html', function() {
       hbs
         .compile("{{htmlHighlighter hlHtml}}")(this.context)
-        .should.eql('<em>Hi !</em> and <span class=\\"anyfetch-hlt\\"><span class=\\"hello\\">hello</span> world</span>');
+        .should.eql('<em>Hi !</em> and <strong><span class=\\"hello\\">hello</span> world</strong>');
     });
   });
 
@@ -104,7 +104,7 @@ describe("Handlebars projection handlers", function() {
     it('should highlight the text', function() {
       hbs
         .compile("{{textHighlighter hlText}}")(this.context)
-        .should.eql('Hi ! and <span class=\\"anyfetch-hlt\\">hello world</span>');
+        .should.eql('Hi ! and <strong>hello world</strong>');
     });
   });
 
