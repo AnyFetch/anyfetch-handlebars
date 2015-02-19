@@ -19,16 +19,16 @@
   "dependencies": {
     "async": "0.9.x",
     "auto-load": "1.x.x",
-    "document-highlighter": "^2.0.3",
-    "handlebars": "^2.0.0",
-    "logic-query-parser": "0.0.4",
+    "document-highlighter": "^2.0.6",
+    "handlebars": "^3.0.0",
+    "logic-query-parser": "0.0.5",
     "rarity": "^2.1.1"
   },
   "devDependencies": {
-    "mocha": "2.0.x",
-    "should": "4.3.x",
-    "jshint": "^2.5.10",
-    "jscs": "^1.8.1"
+    "mocha": "2.1.x",
+    "should": "5.0.x",
+    "jshint": "^2.6.0",
+    "jscs": "^1.11.3"
   },
   "licence": "MIT",
   "engines": {
